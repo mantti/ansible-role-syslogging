@@ -1,0 +1,5 @@
+---
+sshd_logfile: "/var/log/sshd.log"
+sshd_logrotate_rotate_interval: "Monthly"
+sshd_logrotate_rotate: 6
+

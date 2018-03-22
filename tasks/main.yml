@@ -1,0 +1,11 @@
+---
+# This playbook contains common customizations for logging and logrotate
+
+- name: Create rsyslog conf for separate sshd.log
+  tags: local,sshd,rsyslog
+    template: src=sshd_rsyslog.conf dest=/etc/rsyslog.d/sshd.conf owner=root group=admin mode=0640
+
+- name: Create logrotate conf for separate sshd.log
+  tags: local,sshd,logrotate
+    template: src=sshd_logrotate.j2 dest=/etc/logrotate.d/sshd owner=root group=admin mode=0640
+

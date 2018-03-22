@@ -1,0 +1,13 @@
+# {{ ansible_managed }}
+
+{% if sshd_logfile is defined %}
+{{ sshd_logfile }} {
+	{{ sshd_logrotate_rotate_interval }}
+	missingok
+	notifempty
+	sharedscripts
+	rotate {{ sshd_logrotate_rotate }}
+	compress
+	create 640 root admin
+}
+{% endif %}
